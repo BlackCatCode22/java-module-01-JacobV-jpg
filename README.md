@@ -1,45 +1,168 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Q9-s9dt-)
-# tJavaModule01fall25
-tJavaModule01fall25
+//1.HelloWorld
+public class Main {
 
-Code up the following short Java programs and commit one at a time to your GitHub Classroom remote repo.
+    public static void main(String[] args) {
+        String str = "Hello World";
 
-1) HelloWord.java
-Write a program that outputs the obligatory "Hello World!" text string.
-Concepts: Java Program Organization, string output.
+        System.out.println(str);
 
-2) VarsAndMath.java
-Write a program that uses primitive-type variables and simple arithmetic and string concatenation.
-Concepts: Variables, arithmetic, strings.
+    }
+}
 
-3) SimpleGreeting.java
-Write a program that asks the user for their name and prints a personalized greeting.
-Concepts: Scanner, string input/output.
 
-4) FavoriteNumber.java
-Prompt the user to enter their favorite number and print it back along with a message.
-Concepts: Variables, basic input/output, type handling.
+//2.VarAndMath
+public class Main {
 
-5) CircleArea.java
-Calculate the area of a circle given its radius entered by the user.
-Concepts: Arithmetic operations, Math.PI.
+    public static void main(String[] args) {
 
-6) TempConverter.java
-Convert a temperature from Fahrenheit to Celsius.
-Concepts: Variables, arithmetic, formatted output.
+        int a = 9;
+        int b = 10;
+        int c = a + b;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("a+b="+c);
+    }
+}
 
-7) SimpleCalculator.java
-Allow the user to input two numbers and perform basic arithmetic operations (addition, subtraction, multiplication, division).
-Concepts: Variables, arithmetic operators, user input.
 
-8) CharDetails.java
-Take a single character as input and display its Unicode value and whether it’s a letter or digit.
-Concepts: char, conditional operators, string operations.
+//3.SimpleGreeting
+import java.util.Scanner;
 
-9) MadLibs.java
-Ask the user for a series of words (e.g., a noun, verb, adjective) and substitute them into a short predefined story.
-Concepts: String concatenation, input.
+public class Main {
 
-10) SimpleInterest.java
-Calculate the simple interest based on user inputs for principal, rate, and time.
-Concepts: Variables, arithmetic.
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+
+        System.out.println("Hi "+a);
+    }
+}
+
+//4.FavNum
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("What's your favorite Number?");
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        System.out.println("So, your favorite is number "+a);
+
+    }
+}
+
+//5.CircleArea
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("I will calculate the area of a circle for you. Type in the radius.");
+        Scanner sc = new Scanner(System.in);
+        double radius = sc.nextDouble();
+        double area = Math.PI * radius * radius;
+        System.out.println("The area of a circle is " + area + " :).");
+    }
+}
+
+//6.TempConverter
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("I will convert a fahrenheit temperature to celsius.");
+        System.out.println("Type in a number.");
+        Scanner sc = new Scanner(System.in);
+        int fahrenheit = sc.nextInt();
+        int celsius = ((fahrenheit-32) *5/9);
+        System.out.println("Its about "+celsius+" degree celsius");
+    }
+}
+
+//7.Simple Calculator
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Type in two numbers and some basic arithmetic with them.");
+        System.out.println("Don't type in characters other than numbers.");
+        System.out.println("First Number: ");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        System.out.println("Second Number: ");
+        Scanner scc = new Scanner(System.in);
+        int b = scc.nextInt();
+        int c = a + b;
+        System.out.println("Adding these two numbers together gives you: "+c);
+    }
+}
+
+//8.CharDetails
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Enter in a character and I will find the unicode for it.");
+        Scanner sc = new Scanner(System.in);
+        char a = sc.next().charAt(0);
+        int unicodeValue = Character.getNumericValue(a);
+        System.out.println("The unicode value for this character is " + unicodeValue);
+    }
+}
+
+//9.Madlibs
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+
+
+
+        System.out.println("I will ask for a series of words and make a story out of them.");
+        Scanner s = new Scanner(System.in);
+        System.out.println("Type in a noun.");
+        String noun = s.nextLine();
+        System.out.println("Type in a Verb.");
+        String verb= s.nextLine();
+        System.out.println("Type in a adjective.");
+        String adjective = s.nextLine();
+        System.out.println("I can't believe that " + noun + " "+ verb + " that, which was quite " + adjective + "." );
+    }
+}
+
+//10. Simple Interest
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("I will calculate simple interest for you.");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a rate.");
+        int r = sc.nextInt();
+        double rate = r / 100.0;
+
+        System.out.println("Enter principal.");
+        int p = sc.nextInt();
+
+        System.out.println("Enter the a time.");
+        int n = sc.nextInt();
+
+
+        double value = p * Math.pow(1 + rate, n);
+        System.out.println("The amount of interest gained with principal is " + value);
+
+    }
+}
